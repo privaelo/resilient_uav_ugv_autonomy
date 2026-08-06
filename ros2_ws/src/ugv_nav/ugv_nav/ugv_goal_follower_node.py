@@ -4,22 +4,15 @@ import math
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
+from ipp_core.geometry import OBSTACLES
 from nav_msgs.msg import Odometry
 from std_msgs.msg import String
 
 # Obstacle geometry from urban_obstacles.sdf: (cx, cy, half_width, half_height).
 # Used only by the potential-field repulsion layer — sim-specific, not sensor-based.
-_OBSTACLES = [
-    (0.0,   0.0,  0.75, 2.00),   # block_1
-    (5.0,   4.0,  1.00, 1.50),   # block_2
-    (6.0,  -4.0,  1.00, 1.50),   # block_3
-    (-5.0,  3.0,  1.25, 1.25),   # block_4
-    (-6.0, -3.0,  1.25, 1.25),   # block_5
-    (0.0,  10.0, 15.00, 0.30),   # barrier_north
-    (0.0, -10.0, 15.00, 0.30),   # barrier_south
-    (-15.0, 0.0,  0.30, 10.00),  # barrier_west
-    (15.0,  0.0,  0.30, 10.00),  # barrier_east
-]
+# Obstacle geometry lives in ipp_core.geometry so the APF controller and the sensing
+# model cannot drift apart. See that module when the world changes.
+_OBSTACLES = OBSTACLES
 
 # Expand each obstacle by this margin so the robot body clears the surface.
 _ROBOT_RADIUS = 0.55
