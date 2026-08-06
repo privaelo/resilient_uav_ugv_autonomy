@@ -130,7 +130,7 @@ There is no posterior in the loop yet. `ipp_core` computes `λ_t`, `U(t)`, and `
 - ROS 2 Jazzy
 - Gazebo Harmonic
 - Ubuntu 24.04
-- 1 UAV (static aerial observer; flight dynamics out of scope), 3 UGVs
+- 1 UAV (static aerial observer; flight dynamics out of scope), 3 UGVs (diff-drive-equivalent, velocity-controlled)
 - Python (`rclpy`) · URDF/Xacro + SDF
 
 ## Packages
