@@ -199,7 +199,7 @@ ros2 launch multi_robot_bringup simulation.launch.py \
 Scenarios: `clean`, `drop`, `delay`, `blackout`. Schema in `ros2_ws/src/comm_layer/comm_layer/mission_schema.md`.
 
 ---
-
+<!--
 ## Scope
 
 This repository is a multi-robot informative path planning testbed. Adversarial and pursuit-evasion settings are out of scope. Interaction-aware planning is out of scope.
@@ -218,3 +218,4 @@ Capability uncertainty is out of scope for this testbed. Under `J` as defined, t
 2. Does a structure-constrained learned allocator beat an unconstrained one on `J`?
 3. Under what belief-divergence threshold does divertible assignment start to thrash?
 4. Does the coupling survive decentralization? A decentralized auction with bids computed on marginal reduction in `J`, and no agent holding the global belief, would test whether coupled allocation degrades gracefully when the posterior is fragmented across the team. This has to be built — there is no auction implementation in this repo today.
+-->
